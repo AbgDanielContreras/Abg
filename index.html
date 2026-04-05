@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daniel Alexi Contreras Silva — Abogado especialista en Derecho de Tierras, Restitución de Tierras y Formalización de Propiedad Rural. Colombia.">
+  <meta name="keywords" content="abogado tierras Colombia, derecho agrario, restitución de tierras, formalización propiedad rural, pertenencias, sucesiones rurales">
+  <meta name="author" content="Daniel Alexi Contreras Silva">
+  <title>Daniel Contreras Abogado | Derecho de Tierras · Colombia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --verde: #1a3a2a; --verde-medio: #2d5a3d; --verde-claro: #4a8c5c;
+      --dorado: #c9a84c; --dorado-suave: #e8d5a0; --dorado-light: rgba(201,168,76,0.15);
+      --crema: #f9f6ef; --crema-alt: #f2ede3; --blanco: #ffffff;
+      --texto: #1a1a18; --texto-suave: #4a4a42; --texto-light: #7a7a70;
+      --borde: rgba(26,58,42,0.12); --sombra: 0 4px 24px rgba(26,58,42,0.10);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--crema); color: var(--texto); overflow-x: hidden; line-height: 1.6; }
+
+    /* NAV */
+    nav { background: var(--verde); padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Playfair Display', serif; color: var(--dorado); font-size: 1.1rem; letter-spacing: 0.04em; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+    .nav-links a:hover { color: var(--dorado); border-bottom-color: var(--dorado); }
+    .nav-cta { background: var(--dorado) !important; color: var(--verde) !important; padding: 0.45rem 1.2rem; border-radius: 2px; font-weight: 700 !important; border-bottom: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--dorado); }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--verde); border-top: 1px solid rgba(201,168,76,0.2); z-index: 999; padding: 1.5rem 2rem; flex-direction: column; gap: 1rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.1); }
+
+    /* HERO */
+    .hero { background: var(--verde); display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; padding: 5rem 3rem 5rem 7rem; gap: 3rem; position: relative; overflow: hidden; }
+    .hero-bg-shape { position: absolute; right: 0; top: 0; width: 48%; height: 100%; background: var(--verde-medio); clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%); z-index: 0; }
+    .hero-bg-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(201,168,76,0.06) 1px, transparent 1px); background-size: 32px 32px; z-index: 0; }
+    .hero-text { position: relative; z-index: 2; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--dorado-light); border: 1px solid rgba(201,168,76,0.4); color: var(--dorado); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.38rem 1rem; border-radius: 2px; margin-bottom: 1.6rem; }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--dorado); border-radius: 50%; display: inline-block; }
+    .hero h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: 3.2rem; line-height: 1.18; margin-bottom: 0.5rem; font-weight: 700; }
+    .hero h1 em { color: var(--dorado); font-style: normal; display: block; }
+    .hero-name { font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.45); font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.6rem; margin-top: 0.3rem; }
+    .hero-sub { color: rgba(255,255,255,0.62); font-size: 0.95rem; line-height: 1.85; margin-bottom: 2.2rem; font-weight: 300; max-width: 440px; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .btn-primary { background: var(--dorado); color: var(--verde); padding: 0.8rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; border: none; cursor: pointer; font-weight: 700; font-family: 'Lato', sans-serif; border-radius: 2px; transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block; }
+    .btn-primary:hover { background: var(--dorado-suave); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: #fff; padding: 0.8rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.35); cursor: pointer; font-family: 'Lato', sans-serif; border-radius: 2px; transition: border-color 0.2s, color 0.2s; text-decoration: none; display: inline-block; }
+    .btn-secondary:hover { border-color: var(--dorado); color: var(--dorado); }
+    .hero-whatsapp { display: inline-flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.5); font-size: 0.78rem; text-decoration: none; transition: color 0.2s; }
+    .hero-whatsapp:hover { color: var(--dorado); }
+    .hero-whatsapp svg { width: 16px; height: 16px; fill: currentColor; }
+    .hero-cards { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 1rem; }
+    .credential-card { background: rgba(255,255,255,0.055); border: 0.5px solid rgba(201,168,76,0.28); border-radius: 6px; padding: 1.1rem 1.3rem; display: flex; align-items: flex-start; gap: 1rem; transition: background 0.2s; }
+    .credential-card:hover { background: rgba(255,255,255,0.09); }
+    .cred-icon { width: 38px; height: 38px; min-width: 38px; background: var(--dorado-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .cred-icon svg { width: 16px; height: 16px; fill: var(--dorado); }
+    .cred-text strong { color: var(--dorado); display: block; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.25rem; }
+    .cred-text span { color: rgba(255,255,255,0.88); font-size: 0.82rem; line-height: 1.55; }
+
+    /* SECCIONES */
+    section { padding: 5.5rem 7rem; }
+    .section-alt { background: var(--blanco); }
+    .section-crema { background: var(--crema-alt); }
+    .slabel { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--verde-claro); margin-bottom: 0.5rem; }
+    .slabel-light { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dorado); margin-bottom: 0.5rem; }
+    .stitle { font-family: 'Playfair Display', serif; font-size: 2.3rem; color: var(--verde); margin-bottom: 0.8rem; line-height: 1.25; }
+    .stitle em { color: var(--dorado); font-style: normal; }
+    .sdivider { width: 56px; height: 3px; background: var(--dorado); margin-bottom: 2.8rem; }
+
+    /* SERVICIOS */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.4rem; }
+    .service-card { background: var(--blanco); border: 0.5px solid var(--borde); border-radius: 6px; padding: 1.6rem 1.4rem 1.4rem; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--dorado); }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+    .service-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: rgba(201,168,76,0.18); font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--verde); margin-bottom: 0.65rem; font-weight: 600; }
+    .service-card p { font-size: 0.82rem; color: var(--texto-suave); line-height: 1.75; }
+
+    /* PERFIL */
+    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 5rem; align-items: start; }
+    .about-portrait { background: var(--verde); border-radius: 8px; aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; position: relative; overflow: hidden; }
+    .portrait-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, var(--verde-medio) 0%, var(--verde) 60%); }
+    .portrait-pattern { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,168,76,0.03) 20px, rgba(201,168,76,0.03) 21px), repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(201,168,76,0.03) 20px, rgba(201,168,76,0.03) 21px); }
+    .portrait-monogram { position: absolute; top: 2rem; left: 2rem; z-index: 2; width: 72px; height: 72px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; color: var(--dorado); font-size: 1.6rem; font-weight: 700; }
+    .portrait-name { position: relative; z-index: 2; font-family: 'Playfair Display', serif; color: #fff; font-size: 1.35rem; font-weight: 600; line-height: 1.3; }
+    .portrait-title { position: relative; z-index: 2; color: var(--dorado); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 0.35rem; }
+    .about-text p { color: var(--texto-suave); font-size: 0.9rem; line-height: 1.95; margin-bottom: 1.1rem; }
+    .about-highlight { border-left: 3px solid var(--dorado); padding: 0.8rem 1.2rem; background: rgba(201,168,76,0.06); border-radius: 0 4px 4px 0; margin: 1.5rem 0; }
+    .about-highlight p { color: var(--verde); font-style: italic; font-size: 0.9rem; margin: 0; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .stat { text-align: center; padding: 1.2rem 0.8rem; border: 0.5px solid var(--borde); border-radius: 4px; background: var(--crema); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--verde); font-weight: 700; line-height: 1; }
+    .stat-label { font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texto-light); margin-top: 0.4rem; line-height: 1.4; }
+    .cred-badge { display: flex; align-items: center; gap: 0.8rem; padding: 0.75rem 1rem; border: 0.5px solid var(--borde); border-radius: 4px; background: var(--blanco); }
+    .cred-badge-dot { width: 8px; height: 8px; background: var(--dorado); border-radius: 50%; flex-shrink: 0; }
+    .cred-badge span { font-size: 0.82rem; color: var(--texto-suave); }
+    .cred-badge strong { color: var(--verde); font-size: 0.82rem; }
+
+    /* EXPERIENCIA INSTITUCIONAL */
+    .instituciones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .inst-card { background: var(--blanco); border: 0.5px solid var(--borde); border-radius: 8px; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+    .inst-card:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+    .inst-logo { height: 70px; display: flex; align-items: center; justify-content: center; }
+    .inst-logo img { max-height: 70px; max-width: 150px; object-fit: contain; filter: grayscale(20%); transition: filter 0.2s; }
+    .inst-card:hover .inst-logo img { filter: grayscale(0%); }
+    .inst-nombre { font-family: 'Playfair Display', serif; font-size: 0.88rem; color: var(--verde); font-weight: 600; line-height: 1.4; }
+    .inst-rol { font-size: 0.7rem; color: var(--texto-light); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+
+    /* BLOG */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .blog-card { background: var(--blanco); border: 0.5px solid var(--borde); border-radius: 8px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; display: block; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+    .blog-card-header { background: var(--verde); padding: 1.5rem; }
+    .blog-card-fecha { font-size: 0.68rem; color: var(--dorado); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.5rem; }
+    .blog-card-titulo { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.05rem; line-height: 1.4; }
+    .blog-card-body { padding: 1.2rem 1.5rem 1.5rem; }
+    .blog-card-resumen { font-size: 0.82rem; color: var(--texto-suave); line-height: 1.75; margin-bottom: 1rem; }
+    .blog-card-link { font-size: 0.75rem; color: var(--verde-claro); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; }
+    .blog-empty { text-align: center; padding: 4rem 2rem; color: var(--texto-light); font-size: 0.9rem; font-style: italic; border: 0.5px dashed var(--borde); border-radius: 8px; }
+
+    /* CONTACTO */
+    .contact-section { background: var(--verde); padding: 5.5rem 7rem; position: relative; overflow: hidden; }
+    .contact-section::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border: 1px solid rgba(201,168,76,0.08); border-radius: 50%; }
+    .contact-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; text-align: center; }
+    .contact-inner h2 { font-family: 'Playfair Display', serif; color: #fff; font-size: 2.4rem; margin-bottom: 1rem; line-height: 1.3; }
+    .contact-inner h2 em { color: var(--dorado); font-style: normal; }
+    .contact-inner > p { color: rgba(255,255,255,0.6); font-size: 0.92rem; line-height: 1.85; margin-bottom: 3rem; }
+    .contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .contact-card { background: rgba(255,255,255,0.06); border: 0.5px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 1.5rem; text-align: center; text-decoration: none; transition: background 0.2s; }
+    .contact-card:hover { background: rgba(255,255,255,0.1); }
+    .contact-card-icon { width: 44px; height: 44px; background: var(--dorado-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; }
+    .contact-card-icon svg { width: 18px; height: 18px; fill: var(--dorado); }
+    .contact-card-label { font-size: 0.65rem; color: var(--dorado); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 0.35rem; }
+    .contact-card-value { color: rgba(255,255,255,0.9); font-size: 0.88rem; line-height: 1.5; }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: 0.75rem; background: #25d366; color: #fff; padding: 1rem 2.5rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-family: 'Lato', sans-serif; transition: background 0.2s, transform 0.15s; }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+    .btn-whatsapp svg { width: 20px; height: 20px; fill: #fff; }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: #25d366; color: #fff; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+    .wp-pulse { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(37,211,102,0.35); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.7); opacity: 0; } }
+
+    /* FOOTER */
+    footer { background: #0d1f14; padding: 2rem 7rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,168,76,0.1); }
+    .footer-logo { font-family: 'Playfair Display', serif; color: var(--dorado); font-size: 1rem; }
+    footer p { color: rgba(255,255,255,0.3); font-size: 0.72rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      section, .contact-section, footer { padding-left: 3rem; padding-right: 3rem; }
+      .hero { padding: 4rem 3rem; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; padding: 3.5rem 2rem; gap: 2.5rem; }
+      .hero-bg-shape { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .stitle { font-size: 1.8rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-portrait { aspect-ratio: 4/3; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .contact-section { padding: 3.5rem 1.5rem; }
+      .contact-cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.75rem; padding: 1.5rem; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .about-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Daniel Contreras Abogado</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#perfil">Perfil</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contacto" class="nav-cta">Consultar</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="#perfil" onclick="closeMobile()">Perfil</a>
+  <a href="#experiencia" onclick="closeMobile()">Experiencia</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#contacto" onclick="closeMobile()">Consultar</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-dots"></div>
+  <div class="hero-text">
+    <div class="hero-tag">Abogado · Derecho de Tierras &amp; Territorio</div>
+    <h1>Seguridad jurídica<em>sobre su tierra.</em></h1>
+    <p class="hero-name">Daniel Alexi Contreras Silva — Abg. Esp. Mg.</p>
+    <p class="hero-sub">Especialista en Derecho de Tierras y Maestría en Planificación Territorial. Más de 10 años acompañando la formalización, restitución y saneamiento de la propiedad rural en Colombia.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Consulta inicial</a>
+      <a href="#servicios" class="btn-secondary">Ver servicios</a>
+    </div>
+    <a href="https://wa.me/573155952567?text=Hola%20doctor%20Daniel%2C%20necesito%20asesor%C3%ADa%20en%20derecho%20de%20tierras." class="hero-whatsapp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp: 315 595 2567
+    </a>
+  </div>
+  <div class="hero-cards">
+    <div class="credential-card">
+      <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 10 12 6.16-1.26 10-6.45 10-12V7L12 2z"/></svg></div>
+      <div class="cred-text"><strong>Especialización</strong><span>Derecho de Tierras — Universidad Externado de Colombia</span></div>
+    </div>
+    <div class="credential-card">
+      <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+      <div class="cred-text"><strong>Maestría</strong><span>Planificación Territorial y Gestión Ambiental — Universidad de Barcelona</span></div>
+    </div>
+    <div class="credential-card">
+      <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+      <div class="cred-text"><strong>Trayectoria</strong><span>Más de 10 años · +2000 procesos de formalización en Colombia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <p class="slabel">Áreas de práctica</p>
+  <h2 class="stitle">Servicios <em>jurídicos</em> especializados</h2>
+  <div class="sdivider"></div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Formalización y Saneamiento</h3>
+      <p>Titulación y regularización de predios rurales. Corrección de folios de matrícula y saneamiento de vicios de propiedad ante ANT e IGAC.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Pertenencias y Sucesiones</h3>
+      <p>Procesos de pertenencia por prescripción adquisitiva de dominio y trámite integral de sucesiones con bienes inmuebles rurales.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Restitución de Tierras</h3>
+      <p>Representación ante la jurisdicción especial de restitución. Acompañamiento integral a víctimas del conflicto armado en todo el proceso.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Formalización Minera</h3>
+      <p>Legalización de minería de subsistencia y barequeo, títulos mineros, contratos de concesión y trámites ante la ANM.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <h3>Servidumbres</h3>
+      <p>Constitución, modificación y extinción de servidumbres de tránsito, acueducto, paso de líneas de servicios públicos y oleoductos.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <h3>Estudios de Títulos</h3>
+      <p>Análisis de cadenas de tradición, identificación de riesgos jurídicos y certificación de seguridad jurídica predial para compradores e inversionistas.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">07</div>
+      <h3>Derecho Agrario</h3>
+      <p>Asesoría en normativa ANT, UAF, baldíos, ZRC, reforma agraria y procedimientos ante la Agencia Nacional de Tierras.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">08</div>
+      <h3>Gestión Territorial y Ambiental</h3>
+      <p>Asesoría en POT, PBOT, EOT, planes de manejo ambiental, uso del suelo y licencias ambientales en zonas rurales y de protección.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section class="section-alt" id="perfil">
+  <div class="about-grid">
+    <div>
+      <div class="about-portrait">
+        <div class="portrait-overlay"></div>
+        <div class="portrait-pattern"></div>
+        <div class="portrait-monogram">D'c</div>
+        <div class="portrait-name">Daniel Alexi<br>Contreras Silva</div>
+        <div class="portrait-title">Abogado · Esp. · Mg.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.7rem;margin-top:1.2rem">
+        <div class="cred-badge"><div class="cred-badge-dot"></div><span><strong>Esp.</strong> Derecho de Tierras — U. Externado de Colombia</span></div>
+        <div class="cred-badge"><div class="cred-badge-dot"></div><span><strong>Mg.</strong> Planificación Territorial — U. de Barcelona</span></div>
+        <div class="cred-badge"><div class="cred-badge-dot"></div><span><strong>Litigante</strong> Derecho Civil y Restitución de Tierras</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="slabel">Perfil profesional</p>
+      <h2 class="stitle">Conocimiento <em>profundo</em><br>del territorio colombiano</h2>
+      <div class="sdivider"></div>
+      <div class="about-text">
+        <p>Abogado con especialización en Derecho de Tierras de la Universidad Externado de Colombia y Maestría en Planificación Territorial y Gestión Ambiental de la Universidad de Barcelona, con una sólida trayectoria de más de diez años en el litigio en derecho civil y restitución de tierras.</p>
+        <div class="about-highlight">
+          <p>Ha liderado más de 2.000 procesos de formalización de la propiedad rural, acompañando a propietarios, comunidades campesinas, empresas e instituciones públicas en la regularización y protección de su patrimonio inmueble.</p>
+        </div>
+        <p>Su enfoque integra el rigor jurídico del derecho agrario colombiano con una visión territorial amplia, que incorpora el ordenamiento del territorio, la gestión ambiental y las dinámicas del conflicto rural, ofreciendo asesoría integral y estratégica en cada caso.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><div class="stat-num">+10</div><div class="stat-label">Años de litigio</div></div>
+        <div class="stat"><div class="stat-num">+2000</div><div class="stat-label">Procesos de formalización</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Áreas especializadas</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA INSTITUCIONAL -->
+<section class="section-crema" id="experiencia">
+  <p class="slabel">Experiencia institucional</p>
+  <h2 class="stitle">Trabajo con las principales <em>entidades</em> del sector</h2>
+  <div class="sdivider"></div>
+  <div class="instituciones-grid">
+    <div class="inst-card">
+      <div class="inst-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/USAID-Identity.svg/1200px-USAID-Identity.svg.png" alt="USAID" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:64px;height:64px;background:var(--dorado-light);border-radius:50%;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="var(--dorado)"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 10 12 6.16-1.26 10-6.45 10-12V7L12 2z"/></svg></div>
+      </div>
+      <div class="inst-nombre">USAID</div>
+      <div class="inst-rol">Cooperación Internacional</div>
+    </div>
+    <div class="inst-card">
+      <div class="inst-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/UNODC_logo.svg/1200px-UNODC_logo.svg.png" alt="UNODC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:64px;height:64px;background:var(--dorado-light);border-radius:50%;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="var(--dorado)"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 10 12 6.16-1.26 10-6.45 10-12V7L12 2z"/></svg></div>
+      </div>
+      <div class="inst-nombre">UNODC</div>
+      <div class="inst-rol">Naciones Unidas</div>
+    </div>
+    <div class="inst-card">
+      <div class="inst-logo">
+        <img src="https://www.agenciadetierras.gov.co/wp-content/uploads/2018/03/logo-ANT.png" alt="Agencia Nacional de Tierras" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:64px;height:64px;background:var(--dorado-light);border-radius:50%;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="var(--dorado)"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 10 12 6.16-1.26 10-6.45 10-12V7L12 2z"/></svg></div>
+      </div>
+      <div class="inst-nombre">Agencia Nacional de Tierras</div>
+      <div class="inst-rol">Entidad Pública Nacional</div>
+    </div>
+    <div class="inst-card">
+      <div class="inst-logo">
+        <img src="https://www.restituciondetierras.gov.co/documents/10184/0/logo-urt.png" alt="Unidad de Restitución de Tierras" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:64px;height:64px;background:var(--dorado-light);border-radius:50%;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="var(--dorado)"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 10 12 6.16-1.26 10-6.45 10-12V7L12 2z"/></svg></div>
+      </div>
+      <div class="inst-nombre">Unidad de Restitución de Tierras</div>
+      <div class="inst-rol">Entidad Pública Nacional</div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section-alt" id="blog">
+  <p class="slabel">Conocimiento agrario</p>
+  <h2 class="stitle">Blog <em>jurídico</em></h2>
+  <div class="sdivider"></div>
+  <div class="blog-grid" id="blog-grid">
+    <div class="blog-empty">Los artículos aparecerán aquí próximamente.</div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-inner">
+    <p class="slabel-light">Contáctenos</p>
+    <h2>¿Necesita asesoría sobre<em> su tierra?</em></h2>
+    <p>Agende una consulta y reciba orientación jurídica especializada. Atendemos en todo el territorio colombiano.</p>
+    <div class="contact-cards">
+      <a href="https://wa.me/573155952567?text=Hola%20doctor%20Daniel%2C%20necesito%20asesor%C3%ADa%20en%20derecho%20de%20tierras." class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div class="contact-card-label">Teléfono</div>
+        <div class="contact-card-value">+57 315 595 2567</div>
+      </a>
+      <a href="mailto:abgdanielcontreras@outlook.com" class="contact-card">
+        <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div class="contact-card-label">Correo</div>
+        <div class="contact-card-value">abgdanielcontreras@outlook.com</div>
+      </a>
+      <div class="contact-card">
+        <div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div class="contact-card-label">Cobertura</div>
+        <div class="contact-card-value">Colombia — Atención nacional</div>
+      </div>
+    </div>
+    <a href="https://wa.me/573155952567?text=Hola%20doctor%20Daniel%2C%20necesito%20asesor%C3%ADa%20en%20derecho%20de%20tierras." class="btn-whatsapp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Escribir por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Daniel Contreras Abogado</div>
+  <p>© 2026 · Daniel Alexi Contreras Silva · Todos los derechos reservados</p>
+  <p>Abogado · Colombia</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/573155952567?text=Hola%20doctor%20Daniel%2C%20necesito%20asesor%C3%ADa%20en%20derecho%20de%20tierras." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wp-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+  // Menú móvil
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+  function closeMobile() { mob.classList.remove('open'); }
+
+  // Blog: carga desde blog.json
+  fetch('blog.json')
+    .then(r => r.json())
+    .then(data => {
+      const grid = document.getElementById('blog-grid');
+      if (!data.articulos || data.articulos.length === 0) return;
+      grid.innerHTML = '';
+      data.articulos.forEach(a => {
+        const fecha = new Date(a.fecha).toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+        grid.innerHTML += `
+          <a class="blog-card" href="articulos/${a.archivo}">
+            <div class="blog-card-header">
+              <div class="blog-card-fecha">${fecha}</div>
+              <div class="blog-card-titulo">${a.titulo}</div>
+            </div>
+            <div class="blog-card-body">
+              <p class="blog-card-resumen">${a.resumen}</p>
+              <span class="blog-card-link">Leer artículo →</span>
+            </div>
+          </a>`;
+      });
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
